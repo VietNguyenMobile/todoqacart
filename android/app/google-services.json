@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1030424750890",
+    "firebase_url": "https://udemy-appium-f7c68-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "udemy-appium-f7c68",
+    "storage_bucket": "udemy-appium-f7c68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030424750890:android:0107ef0434723fe8df8c53",
+        "android_client_info": {
+          "package_name": "com.todoqacart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030424750890-8uvf64ic4dlmb3oaragb9ei1r9gqijn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDkcStbio1uOD1ZQFxCDnoNIcNpt6qTvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030424750890-8uvf64ic4dlmb3oaragb9ei1r9gqijn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
