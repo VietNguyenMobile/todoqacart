@@ -11,7 +11,7 @@ import {
   Keyboard,
   ActivityIndicator,
 } from "react-native";
-
+import firestore from "@react-native-firebase/firestore";
 import Logo from "../components/Logo";
 import auth from "@react-native-firebase/auth";
 import { AuthParamType } from "../navigation";
@@ -30,13 +30,10 @@ const SignupScreen: FunctionComponent<SignupScreenProps> = ({
 
   const handleSignup = () => {
     setIsLoading(true);
-    // firebase
-    // .auth()
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
-        firebase
-          .firestore()
+        firestore()
           .collection("users")
           .doc(user.user.uid)
           .set({

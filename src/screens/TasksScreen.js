@@ -7,12 +7,12 @@ import {
   TouchableNativeFeedback,
   TouchableOpacity,
 } from "react-native";
+import firestore from "@react-native-firebase/firestore";
+import auth from "@react-native-firebase/auth";
 import Logo from "../components/Logo";
 import AddTask from "../components/AddTask";
 import Task from "../components/Task";
 import TaskInput from "../components/TaskInput";
-// import firebase from '../components/Firebase';
-import auth from "@react-native-firebase/auth";
 
 export default function TasksScreen() {
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -24,8 +24,7 @@ export default function TasksScreen() {
   const currentUser = auth().currentUser.uid;
 
   useEffect(() => {
-    firebase
-      .firestore()
+    firestore()
       .collection("users")
       .doc(currentUser)
       .collection("todos")

@@ -28,8 +28,6 @@ const LoginScreen: FunctionComponent<LoginScreenProps> = ({
 
   const handleLogin = () => {
     setIsLoading(true);
-    // firebase
-    // .auth()
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(user => {
