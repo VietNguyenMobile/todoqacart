@@ -12,6 +12,7 @@ import {
   Keyboard,
 } from "react-native";
 import Logo from "../components/Logo";
+import { testProps } from "../utils/testProps";
 
 import { AuthParamType } from "../navigation";
 
@@ -49,15 +50,18 @@ const LoginScreen: FunctionComponent<LoginScreenProps> = ({
         </View>
         <View style={styles.loginContainer}>
           <TextInput
+            {...testProps("email")}
             style={styles.textInput}
             placeholder="Enter your Email"
             value={email}
             onChangeText={value => setEmail(value)}
+            // accessibilityLabel="email" // android and ios
+            // testID="email" // ios
           />
           <TextInput
             style={styles.textInput}
-            testID="password"
-            placeholder="Enter your Password"
+            {...testProps("password")}
+            // testID="password"
             placeholder="Enter your Password"
             value={password}
             onChangeText={value => setPassword(value)}
@@ -66,16 +70,22 @@ const LoginScreen: FunctionComponent<LoginScreenProps> = ({
           {isLoading ? (
             <ActivityIndicator size="large" color="#fff" />
           ) : (
-            <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+            <TouchableOpacity
+              style={styles.loginButton}
+              onPress={handleLogin}
+              {...testProps("login")}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
           )}
 
           {errorMessage ? (
-            <Text style={styles.error}>{errorMessage}</Text>
+            <Text {...testProps("error")} style={styles.error}>
+              {errorMessage}
+            </Text>
           ) : null}
 
           <TouchableOpacity
+            {...testProps("signup")}
             style={styles.signupButton}
             onPress={() => navigation.navigate("Signup")}>
             <Text style={styles.buttonText}>Signup</Text>

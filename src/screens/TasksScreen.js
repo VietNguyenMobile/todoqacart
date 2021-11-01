@@ -13,6 +13,7 @@ import Logo from "../components/Logo";
 import AddTask from "../components/AddTask";
 import Task from "../components/Task";
 import TaskInput from "../components/TaskInput";
+import { testProps } from "../utils/testProps";
 
 export default function TasksScreen() {
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -123,6 +124,7 @@ export default function TasksScreen() {
         <TouchableOpacity
           accessible={false}
           style={styles.logoutContainer}
+          {...testProps("logout")}
           onPress={() => firebase.auth().signOut()}>
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
